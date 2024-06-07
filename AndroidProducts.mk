@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-   $(LOCAL_DIR)/lineage_selene.mk
+   $(LOCAL_DIR)/lineage_X6831.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_selene-user \
-    lineage_selene-userdebug \
-    lineage_selene-eng
+    lineage_X6831-user \
+    lineage_X6831-userdebug \
+    lineage_X6831-eng
