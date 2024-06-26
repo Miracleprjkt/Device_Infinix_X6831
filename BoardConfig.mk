@@ -200,3 +200,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Vendor security patch date
 VENDOR_SECURITY_PATCH := 2022-10-01
+
+#Vendor Tree
+BUILD_WITHOUT_VENDOR := true
+include vendor/infinix/X6831/BoardConfigVendor.mk
