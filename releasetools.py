@@ -17,6 +17,13 @@
 import common
 import re
 
+def FullOTA_InstallBegin(info):
+  input_zip = info.input_zip
+  data = input_zip.read("RADIO/dynamic-add-system_ext")
+  common.ZipWriteStr(info.output_zip, "dynamic-add-system_ext", data)
+  info.script.AppendExtra('update_dynamic_partitions(package_extract_file("dynamic-add-system_ext"));')
+  return
+
 def FullOTA_InstallEnd(info):
   input_zip = info.input_zip
   OTA_InstallEnd(info, input_zip)
@@ -33,6 +40,5 @@ def AddImage(info, input_zip, basename, dest):
 
 def OTA_InstallEnd(info, input_zip):
   info.script.Print("Patching device-tree and verity images...")
-  AddImage(info, input_zip, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
-  AddImage(info, input_zip, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
-  AddImage(info, input_zip, "vbmeta_system.img", "/dev/block/bootdevice/by-name/vbmeta_system")
+  AddImage(info, input_zip, "dtbo.img", "/dev/block/platform/bootdevice/by-name/dtbo")
+  AddImage(info, input_zip, "vbmeta.img", "/dev/block/platform/bootdevice/by-name/vbmeta")
