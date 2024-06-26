@@ -21,14 +21,15 @@ AB_OTA_UPDATER := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
-AB_OTA_PARTITIONS := \
-    boot \
-    dtbo \
-    product \
-    system \
+AB_OTA_PARTITIONS += \
+    system_ext \
     vendor \
-    vbmeta \
-    vbmeta_system
+    system \
+    vbmeta_system \
+    boot \
+    product \
+    vbmeta_vendor
+
 
 # Architecture
 TARGET_ARCH := arm64
