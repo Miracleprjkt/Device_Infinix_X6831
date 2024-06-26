@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/selene
+DEVICE_PATH := device/infinix/X6831
 
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/xiaomi/selene/selene-vendor.mk)
+$(call inherit-product, vendor/infinix/X6831/X6831-vendor.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -134,7 +134,7 @@ PRODUCT_PACKAGES_DEBUG += \
     
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.selene
+    android.hardware.biometrics.fingerprint@2.1-service.X6831
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -452,16 +452,16 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
-    ApertureOverlaySelene \
-    ApertureQRScannerOverlaySelene \
-    CarrierConfigOverlaySelene \
-    DialerOverlaySelene \
-    FrameworksResOverlaySelene \
-    SettingsOverlaySelene \
-    SystemUIOverlaySelene \
-    TelephonyOverlaySelene \
+    ApertureOverlayX6831 \
+    ApertureQRScannerOverlayX6831 \
+    CarrierConfigOverlayX6831 \
+    DialerOverlayX6831 \
+    FrameworksResOverlayX6831 \
+    SettingsOverlayX6831 \
+    SystemUIOverlayX6831 \
+    TelephonyOverlayX6831 \
     TetheringConfigOverlay \
-    WifiOverlaySelene
+    WifiOverlayX6831
 
 # Dynamic Partitions 
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -513,7 +513,7 @@ PRODUCT_PACKAGES += \
     fastbootd
     
 # Firmware
-RECOVERY_TS_FW_PATH := vendor/xiaomi/selene/proprietary/vendor/firmware
+RECOVERY_TS_FW_PATH := vendor/infinix/X6831/proprietary/vendor/firmware
 
 PRODUCT_COPY_FILES += \
     $(RECOVERY_TS_FW_PATH)/focaltech_mp_fw_huaxing.ini:recovery/root/vendor/firmware/focaltech_mp_fw_huaxing.ini \
@@ -532,7 +532,7 @@ PRODUCT_COPY_FILES += \
     
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.selene
+    android.hardware.light-service.X6831
     
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -588,7 +588,7 @@ PRODUCT_PACKAGES += \
     libkeystore-engine-wifi-hidl
 
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy.selene
+    android.hardware.wifi@1.0-service-lazy.X6831
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
@@ -623,7 +623,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.selene \
+    android.hardware.usb@1.1-service.X6831 \
     android.hardware.usb@1.0 \
     android.hardware.usb@1.0.vendor \
     android.hardware.usb@1.1 \
