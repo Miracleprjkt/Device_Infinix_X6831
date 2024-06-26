@@ -19,7 +19,6 @@ DEVICE_PATH := device/xiaomi/X6831
 # A/B
 AB_OTA_UPDATER := true
 BOARD_USES_RECOVERY_AS_BOOT := true
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
 AB_OTA_PARTITIONS += \
     system_ext \
