@@ -397,11 +397,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0 \
     android.hardware.radio.deprecated@1.0.vendor
-    
-# Recovery
-PRODUCT_PACKAGES += \
-    init.recovery.mt6768.rc \
-    init.recovery.mt6768.sh
 
 # RIL
 PRODUCT_PACKAGES += \
