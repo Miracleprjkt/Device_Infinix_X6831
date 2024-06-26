@@ -440,10 +440,8 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/mediatek
-
+    hardware/mediatek \
+    hardware/transsion
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay-lineage
