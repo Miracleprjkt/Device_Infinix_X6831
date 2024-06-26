@@ -1,2 +1,0 @@
-on property:vendor.connsys.driver.ready=yes
-    start wlan_assistant

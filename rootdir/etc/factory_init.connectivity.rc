@@ -1,18 +1,12 @@
-on post-fs-data
-# GPS
-    mkdir /data/vendor/gps 0770 gps system
-    chown gps gps /dev/stpgps
-    chmod 0660 /dev/stpgps
-
-# GPS EMI
-    chmod 666 /dev/gps_emi
-
-# WiFi
-    mkdir /data/misc/wifi 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/wpa_supplicant 0770 wifi wifi
+import /vendor/etc/init/hw/factory_init.connectivity.common.rc
 
 on boot
+
+#
+# Connectivity related services (Begin)
+#
+
+# WMT
 service wmt_loader /vendor/bin/wmt_loader
     user system
     group system
@@ -22,11 +16,19 @@ service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/
     user system
     group system
 
-service wlan_assistant /vendor/bin/wlan_assistant
-    class main
-    user wifi
-    group system gps inet
+#
+# Connectivity related services (End)
+#
 
-# load wifi chrdev driver and wlan driver after wmt_loader finish
-on property:vendor.connsys.driver.ready=yes
-    start wlan_assistant
+#
+# Connectivity related kernel objects (Begin)
+#
+
+# load wmt_drv
+on boot
+    insmod /vendor/lib/modules/wmt_drv.ko
+
+#
+# Connectivity related kernel objects (End)
+#
+

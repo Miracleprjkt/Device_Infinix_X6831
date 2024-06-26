@@ -1,11 +1,14 @@
-on post-fs-data
-#GPS
-    mkdir /data/vendor/gps 0770 gps system
+import /vendor/etc/init/hw/meta_init.connectivity.common.rc
 
-# GPS EMI
-    chmod 666 /dev/gps_emi
+#INTERNAL_START
 
 on boot
+
+#
+# Connectivity related services (Begin)
+#
+
+# WMT
 service wmt_loader /vendor/bin/wmt_loader
     user system
     group system
@@ -14,3 +17,21 @@ service wmt_loader /vendor/bin/wmt_loader
 service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/
     user system
     group system
+
+#
+# Connectivity related services (End)
+#
+
+#
+# Connectivity related kernel objects (Begin)
+#
+
+# load wmt_drv
+on boot
+    insmod /vendor/lib/modules/wmt_drv.ko
+
+#
+# Connectivity related kernel objects (End)
+#
+
+#INTERNAL_END
