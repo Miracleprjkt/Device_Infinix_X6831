@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/X6831
+DEVICE_PATH := device/infinix/X6831
 
 # A/B
 AB_OTA_UPDATER := true
@@ -28,7 +28,6 @@ AB_OTA_PARTITIONS += \
     boot \
     product \
     vbmeta_vendor
-
 
 # Architecture
 TARGET_ARCH := arm64
