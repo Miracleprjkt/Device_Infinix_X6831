@@ -944,10 +944,6 @@ vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Miscellaneous
-odm/etc/vintf/manifest_dsds.xml
-odm/etc/vintf/manifest_qsqs.xml
-odm/etc/vintf/manifest_ss.xml
-odm/etc/vintf/manifest_tsts.xml
 vendor/app/GoogleNetworkStackResOverlay/GoogleNetworkStackResOverlay.apk
 vendor/app/GoogleTetheringResOverlay/GoogleTetheringResOverlay.apk
 vendor/app/InProcessTetheringResOverlay/InProcessTetheringResOverlay.apk
